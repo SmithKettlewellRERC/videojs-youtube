@@ -101,6 +101,8 @@
       });
 
       this.el_.setAttribute('allowFullScreen', '');
+      this.el_.setAttribute('aria-label', 'YouTube video frame');
+      this.el_.setAttribute('tabIndex', -1);
 
       this.playerEl_.insertBefore(this.el_, this.playerEl_.firstChild);
 
@@ -518,7 +520,7 @@
   videojs.Youtube.prototype.currentSrc = function() {
     return this.srcVal;
   };
-  
+
   videojs.Youtube.prototype.ended = function() {
     return (this.ytplayer) ? (this.lastState === YT.PlayerState.ENDED) : false;
   };
